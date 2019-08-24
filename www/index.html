@@ -23,7 +23,10 @@
 
         // 得られた和暦をHTMLに変換
         document.getElementById('reiwa-year').textContent = reiwaYear;
-        document.getElementById('year').textContent = fullYear;
+        // document.getElementById('year').textContent = fullYear;
+        document.getElementById('reiwa').addEventListener('click',function(e){
+          e.target.style.color = '#'+Math.floor(Math.random()*16777215).toString(16);
+        });
 
         // （記述して吐き気が。。。もう元号対応やだぁ。。。😩）
       });
