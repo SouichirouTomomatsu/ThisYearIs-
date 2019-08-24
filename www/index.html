@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- ここでビューポイントの設定を行う -->
+    <!-- 表示倍率を1。ユーザーにズーム操作を許可しない -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      // ページの読み込みが終わったら実行する
+      document.addEventListener('DOMContentLoaded',function(){
+        // 今の日付を取得
+        var nowDate = new Date();
+
+        // 西暦を取得
+        var fullYear = nowDate.getFullYear();
+
+        // 西暦和暦変換
+        var reiwaYear = fullYear - 2018;
+
+        // 得られた和暦をHTMLに変換
+        document.getElementById('reiwa-year').textContent = reiwaYear;
+        document.getElementById('year').textContent = fullYear;
+
+        // （記述して吐き気が。。。もう元号対応やだぁ。。。😩）
+      });
+    </script>
+</head>
+<body>
+  <div id="reiwa">
+    今年は令和<span id="reiwa-year"></span>年です。
+  </div>
+  <div id="ad">A.D. <span id="year"></span></div>
+</body>
+</html>
